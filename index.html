@@ -8,13 +8,13 @@
     <script>
         function analyse() {
             var text = document.getElementById("text").value;
-
-            var comparable = /compareTo\([\w\d]+\)/
+    	                     
+            var comparable = /compareTo\([\w\d\.()]+\)/gm
             comparable_var = text.match(comparable)[0];
-            var comparable2 = /\([\w\d]+\)/gm;
+            var comparable2 = /\([\w\d\.()]+\)/gm;
             // getting the comparable var
             var comparable_var = comparable_var.match(comparable2)[0];
-            var comparable3 = /[\w\d]+/gm;
+            var comparable3 = /[\w\d\.()]+/gm;
             comparable_var = comparable_var.match(comparable3)[0];
                     
             var operator = /(<=|>=|<|>|!=|==)/gm;
